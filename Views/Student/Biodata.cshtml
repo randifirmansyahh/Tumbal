@@ -1,0 +1,23 @@
+﻿@model List<Biodata>
+@* ctrl + k d *@
+
+@foreach (var item in Model)
+{
+    <h1>@item.Nama</h1>
+}
+
+<form action="create" method="post">
+    <input type="text" name="[]hp" value="123" />
+    <input type="text" name="[]hp" value="456" />
+    <input type="file" name="file" value="" />
+    <input type="submit" name="name" value="" />
+</form>
+
+
+<script>
+
+    var cek1 = document.getElementById("NamaInduk").value;
+    document.getElementsByClassName("kontol").innerHtml = cek1;
+    var cek = 0;
+
+</script>

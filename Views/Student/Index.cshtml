@@ -1,0 +1,40 @@
+﻿@model FormModel
+@*@for (int a = 0; a < 3; a++)
+    {
+        <p>id @Model[a].Id</p>
+        <img src="~/@Model[a].Foto" alt="Alternate Text" />
+        <h1>Nama : @Model[a].Nama</h1>
+        <h2>Alamat : @Model[a].Alamat</h2>
+        <h2>Telepon : @Model[a].Telepon</h2>
+        <hr />
+    }*@
+
+
+@*@foreach (var data in Model)
+    {
+        <p>id @data.Id</p>
+        <img src="~/@data.Foto" alt="Alternate Text" />
+        <h1>Nama : @data.Nama</h1>
+        <h2>Alamat : @data.Alamat</h2>
+        <h2>Telepon : @data.Telepon</h2>
+        <hr />
+    }*@
+
+@*<h1>@ViewBag.nama</h1>
+
+    <hr />
+
+    @foreach (var item in Model)
+    {
+        <h1>@item.Id</h1>
+        <h1>@item.Nama</h1>
+    }*@
+<h1>ini clas induk</h1>
+<input type="text" id="NamaInduk" value="@ViewBag.nama" />
+
+@* Bisa *@
+@*<h1>@Model.mobil.Nama</h1>
+    <h1>@Model.mobil.Merk</h1>*@
+
+@await Html.PartialAsync("Biodata.cshtml", Model.biodata)
+@await Html.PartialAsync("Partial/Mobil.cshtml")
