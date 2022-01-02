@@ -14,6 +14,6 @@ namespace Blogs.Models
 
         }
 
-        public virtual DbSet<Blog> Tb_Blog { get; set; }
+        public virtual DbSet<Blog> goblogs { get; set; }
     }
 }
