@@ -57,7 +57,7 @@ namespace Blogs
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Contoh}/{action=Index}/{id?}");
+                    pattern: "{controller=Blogs}/{action=Index}/{id?}");
             });
         }
     }
