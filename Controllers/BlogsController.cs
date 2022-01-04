@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Blogs.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace Blogs.Controllers
 {
@@ -13,14 +14,18 @@ namespace Blogs.Controllers
     {
         private readonly AppDbContext _context;
 
-        public BlogsController(AppDbContext context)
+        private readonly IConfiguration _config;
+
+        public BlogsController(AppDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
 
         // GET: Blogs
         public async Task<IActionResult> Index()
         {
+            ViewBag.Email = _config.GetValue<string>("DefaultEmail:email"); //mengambil data dari appsetting.json
             return View(await _context.goblogs.ToListAsync());
         }
 
