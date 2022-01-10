@@ -56,15 +56,16 @@ namespace Blogs.Controllers
         // POST: Blogs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Content,Author,CreateDate,Status")] Blog blog)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(blog);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
+                //return Redirect("../Main/Privasi"); // redirect bebas
             }
             return View(blog);
         }
