@@ -18,6 +18,9 @@ namespace Blogs.Controllers
             _logger = logger;
         }
 
+        [Route("Login")]
+        [Route("Login/Detail")]
+        [Route("Login/Detail/{id}")]
         public IActionResult Index()
         {
             return View();
