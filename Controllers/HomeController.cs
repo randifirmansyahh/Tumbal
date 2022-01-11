@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Blogs.Controllers
 {
+    [Route("Main")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,16 +19,21 @@ namespace Blogs.Controllers
             _logger = logger;
         }
 
+        [Route("Login")]
+        [Route("Login/Detail")]
+        [Route("Login/Detail/{id}")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [Route("Satu")]
         public IActionResult Pertama()
         {
             return View();
         }
 
+        [Route("Privasi")]
         public IActionResult Privacy()
         {
             return View();
